@@ -1,0 +1,28 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"/>
+    <!-- css -->
+    <link rel="stylesheet" href="{% static 'css/header.css' %}">
+    <link rel="stylesheet" href="{% static 'css/form.css' %}">
+    <title>{% block title %}{% endblock title %}</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+              <li><strong><em>X-tube MAX</em></strong></li>
+            </ul>
+            <ul>
+                <li><a href="{% url 'video' %}">Video</a></li>
+                <li><a href="{% url 'audio' %}">Audio</a></li>
+            </ul>
+        </nav>        
+    </header>
+
+    {% block content %}
+    {% endblock content %}
+</body>
+</html>

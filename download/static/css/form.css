@@ -1,0 +1,13 @@
+.container-download{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+form{
+    width: 500px;
+    height: 450px;
+    text-align: center;
+    gap: 10px;
+}

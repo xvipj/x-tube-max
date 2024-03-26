@@ -1,0 +1,21 @@
+header{
+    width: 100%;
+    height: 20vh;
+}
+nav{
+    width: 50%;
+    height: 100%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+}
+a{
+    text-decoration: none;
+}
+a:hover{
+    padding: 10px;
+    background-color: #ffffff;
+    color: black;
+    transition: 1s;
+    transform: scale(1.1);
+}
