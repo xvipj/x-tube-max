@@ -33,7 +33,7 @@ Esto iniciará el servidor de desarrollo en tu máquina local. Puedes acceder a 
 
 ## Ruta de Descarga
 
-en el directorio raiz del proyecto, encontrara 2 carpetas, en donde se van a contener los videos y los audios descargados, (puedes personalizar la ruta de descargar si asi lo desea).
+en el directorio raiz del proyecto, encontrara 2 carpetas, en donde se van a contener los videos y los audios descargados, (puedes personalizar la ruta de descarga si asi lo desea).
 
 ![ui](image/lu.png)
 
