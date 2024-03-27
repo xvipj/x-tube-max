@@ -7,7 +7,7 @@ Estaba harto de las interminables páginas de descarga de videos plagadas de anu
 Primero, asegúrate de tener Git instalado en tu sistema. Luego, ejecuta el siguiente comando en tu terminal para clonar el repositorio de tu proyecto Django:
 
 ```bash
-git@github.com:xvipj/x-tube-max.git
+git clone git@github.com:xvipj/x-tube-max.git
 ```
 
 👉 **Instalar los paquetes del archivo `requirements.txt`:**
