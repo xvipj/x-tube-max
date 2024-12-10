@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from pytube import YouTube
+from pytubefix import YouTube, Playlist
 import os
 import moviepy.editor as mp
 
@@ -11,7 +11,7 @@ def download_video(request):
         ruta_descarga = 'videos/'  # Ajusta según tu configuración
         try:
             youtube = YouTube(enlace_video)
-            stream = youtube.streams.get_highest_resolution()
+            stream = youtube.streams.filter(progressive=True).get_highest_resolution()
             stream.download(ruta_descarga)
             mensaje = "¡Vídeo descargado correctamente!"
         except Exception:
@@ -24,7 +24,7 @@ def download_audio(request):
     mensaje = ""  
     if request.method == 'POST':
         enlace_video = request.POST['enlace_audio']
-        ruta_descarga = 'audio/'  # Ajusta según tu configuración
+        ruta_descarga = 'audios/'  # Ajusta según tu configuración
         try:
             # Descargar el video de YouTube
             youtube = YouTube(enlace_video)
@@ -45,3 +45,30 @@ def download_audio(request):
             mensaje = "Ingrese una URL válida"
 
     return render(request, 'audio.html', {'mensaje': mensaje})
+
+
+def download_playlist(request):
+    if request.method == 'POST':
+        playlist_url = request.POST.get('enlace_playlist')
+        ruta_descarga = 'playlist/' 
+        
+        try:
+            # Crear objeto Playlist
+            playlist = Playlist(playlist_url)
+            
+            # Recorrer cada video y descargar el stream progresivo más adecuado
+            for video in playlist.videos:
+                try:
+                    # Obtener un stream progresivo con video y audio
+                    stream = video.streams.filter(progressive=True).get_highest_resolution()
+                    stream.download(ruta_descarga)  # Descargar el video
+                except Exception as video_error:
+                    print(f"Error al descargar el video {video.title}: {video_error}")
+            
+            # Mostrar el resultado en la página
+            return render(request, 'video_playlist.html', {'mensaje': '¡Playlist descargada con éxito!'})
+
+        except Exception as e:
+            return render(request, 'video_playlist.html', {'mensaje': f"Error al procesar la playlist: {str(e)}"})
+
+    return render(request, 'video_playlist.html')

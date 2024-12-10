@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}Download Videos PlayList{% endblock title %}
+
+{% block content %}
+    <div class="container-download">
+        <form method="post">
+            <h1>Descargar Videos PlayList</h1>
+            {% csrf_token %}
+            <label for="enlace_playlist">Enlace de la Playlist:</label>
+            <input type="text" name="enlace_playlist" id="enlace_playlist">
+            <button type="submit">Descargar</button>
+            <p>{{ mensaje }}</p>
+        </form>
+    </div>
+{% endblock content %}
