@@ -11,7 +11,8 @@ moviepy==1.0.3
 numpy==1.26.4
 pillow==10.2.0
 proglog==0.1.10
-pytube==12.1.3
+pytube==15.0.0
+pytubefix==8.8.0
 requests==2.31.0
 setuptools==69.2.0
 sqlparse==0.4.4
