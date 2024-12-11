@@ -4,6 +4,7 @@ charset-normalizer==3.3.2
 colorama==0.4.6
 decorator==4.4.2
 Django==5.0.3
+django-inline-svg==0.1.1
 idna==3.6
 imageio==2.34.0
 imageio-ffmpeg==0.4.9
