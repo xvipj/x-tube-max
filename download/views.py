@@ -47,7 +47,7 @@ def download_audio(request):
     return render(request, 'audio.html', {'mensaje': mensaje})
 
 
-def download_playlist(request):
+def download_video_playlist(request):
     if request.method == 'POST':
         playlist_url = request.POST.get('enlace_playlist')
         ruta_descarga = 'playlist/' 
@@ -72,3 +72,6 @@ def download_playlist(request):
             return render(request, 'video_playlist.html', {'mensaje': f"Error al procesar la playlist: {str(e)}"})
 
     return render(request, 'video_playlist.html')
+
+def download_audio_playlist(request):
+    return render(request, 'audios_playlist.html')

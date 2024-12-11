@@ -1,4 +1,6 @@
 {% load static %}
+{% load svg %}
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -16,14 +18,16 @@
               <li><strong><em>X-tube MAX</em></strong></li>
             </ul>
             <ul>
-                <li><a href="{% url 'video' %}">Video</a></li>
-                <li><a href="{% url 'audio' %}">Audio</a></li>
-                <li><a href="{% url 'videoplaylist' %}">PlayList Video</a></li>
+                <li><a href="{% url 'video' %}">video {% svg 'video' %}</a></li>
+                <li><a href="{% url 'audio' %}">audio {% svg 'audio' %}</a></li>
+                <li><a href="{% url 'videoplaylist' %}">playList video {% svg 'video' %}</a></li>
+                <li><a href="{% url 'audioplaylist' %}">playList audios {% svg 'playlist' %}</a></li>
             </ul>
-        </nav>        
+        </nav>
     </header>
 
     {% block content %}
     {% endblock content %}
+
 </body>
 </html>
