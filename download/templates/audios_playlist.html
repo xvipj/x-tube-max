@@ -8,8 +8,7 @@
             <h1>Descargar Audios PlayList</h1>
             {% csrf_token %}
             <label for="enlace_playlist">Enlace de la Playlist:</label>
-            <h2>Proximamente</h2>
-            <!--<input type="text" name="enlace_playlist" id="enlace_playlist">-->
+            <input type="text" name="enlace_playlist" id="enlace_playlist">
             <button type="submit">Descargar</button>
             <p>{{ mensaje }}</p>
         </form>
