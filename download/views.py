@@ -1,14 +1,14 @@
 from django.shortcuts import render
 from pytubefix import YouTube, Playlist
 import os
+from pathlib import Path
 import moviepy.editor as mp
 
-# Create your views here.
 def download_video(request):
     mensaje = ""  
     if request.method == 'POST':
         enlace_video = request.POST['enlace_video']
-        ruta_descarga = 'videos/'  # Ajusta según tu configuración
+        ruta_descarga = str(Path.home() / "Downloads")
         try:
             youtube = YouTube(enlace_video)
             stream = youtube.streams.filter(progressive=True).get_highest_resolution()
@@ -23,7 +23,7 @@ def download_audio(request):
     mensaje = ""  
     if request.method == 'POST':
         enlace_video = request.POST['enlace_audio']
-        ruta_descarga = 'audios/'  # Ajusta según tu configuración
+        ruta_descarga = str(Path.home() / "Downloads")
         try:
             # Descargar el video de YouTube
             youtube = YouTube(enlace_video)
@@ -49,7 +49,7 @@ def download_audio(request):
 def download_video_playlist(request): 
     if request.method == 'POST':
         playlist_url = request.POST.get('enlace_playlist')
-        ruta_descarga = 'playlist/' 
+        ruta_descarga = str(Path.home() / "Downloads")
         
         try:
             # Crear objeto Playlist
@@ -75,7 +75,8 @@ def download_video_playlist(request):
 def download_audio_playlist(request):
     if request.method == 'POST':
         playlist_url = request.POST.get('enlace_playlist')
-        ruta_descarga = 'playlist/'
+        # Obtener la ruta de la carpeta de descargas del sistema
+        ruta_descarga = str(Path.home() / "Downloads")
         
         try:
             # Crear objeto Playlist

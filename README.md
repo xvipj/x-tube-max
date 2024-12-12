@@ -1,4 +1,8 @@
-Estaba harto de las interminables páginas de descarga de videos plagadas de anuncios, así que decidí tomar cartas en el asunto y crear mi propio sistema de descarga de videos de YouTube: X-Tube Max. 🚀
+# Enlace a la aplicación en producción
+
+¡Prueba la aplicación en producción! Haz clic en el siguiente enlace para explorarla:
+
+[🔗 Prueba la aplicación aquí](https://link.com)
 
 ![ui](image/ui.png)
 
@@ -29,12 +33,5 @@ python manage.py runserver
 ```
 
 Esto iniciará el servidor de desarrollo en tu máquina local. Puedes acceder a tu proyecto en un navegador web visitando `http://localhost:8000/`.
-
-
-## Ruta de Descarga
-
-en el directorio raiz del proyecto, encontrara 2 carpetas, en donde se van a contener los videos y los audios descargados, (puedes personalizar la ruta de descarga si asi lo desea).
-
-![ui](image/lu.png)
 
 Recuerda que al no aplicar migraciones, es posible que ciertas funcionalidades de tu proyecto no estén disponibles o funcionen correctamente. Este enfoque es útil en situaciones donde necesitas ejecutar rápidamente el proyecto sin preocuparte por la base de datos.
