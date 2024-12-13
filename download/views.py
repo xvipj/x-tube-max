@@ -6,18 +6,21 @@ import moviepy.editor as mp
 
 def download_video(request):
     mensaje = ""  
+    load = False
     if request.method == 'POST':
         enlace_video = request.POST['enlace_video']
         ruta_descarga = str(Path.home() / "Downloads")
         try:
+            load = True
             youtube = YouTube(enlace_video)
             stream = youtube.streams.filter(progressive=True).get_highest_resolution()
             stream.download(ruta_descarga)
             mensaje = "¡Vídeo descargado correctamente!"
+            load = False
         except Exception:
             mensaje = "ingrese la url"
 
-    return render(request, 'video.html', {'mensaje': mensaje})
+    return render(request, 'video.html', {'mensaje': mensaje, 'load': load})
 
 def download_audio(request):
     mensaje = ""  

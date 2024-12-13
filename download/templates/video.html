@@ -4,12 +4,13 @@
 
 {% block content %}
     <div class="container-download">
-        <form method="post">
+        <form method="post" onsubmit="showSpinner()">
             <h1>Descargar Videos</h1>
             {% csrf_token %}
             <label for="enlace_video">Enlace del vídeo:</label>
             <input type="text" name="enlace_video" id="enlace_video">
             <button type="submit">Descargar</button>
+            <div id="spinner" style="display: none;"><p>Cargando...</p></div>
             <p>{{ mensaje }}</p>
         </form>
     </div>
