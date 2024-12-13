@@ -4,7 +4,7 @@
 
 ¡Prueba la aplicación en producción! Haz clic en el siguiente enlace para explorarla:
 
-[🔗 Prueba la aplicación aquí](https://link.com)
+[🔗 Prueba la aplicación aquí]()
 
 ![ui](image/ui.png)
 
